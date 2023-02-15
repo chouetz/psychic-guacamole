@@ -1,43 +1,28 @@
 <!--
   <<< Author notes: Header of the course >>>
-  Read <https://skills.github.com/quickstart> for more information about how to build courses using this template.
-  Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Next to "About", add description & tags; disable releases, packages, & environments.
-  Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
+ YOU CAN EDIT THIS ROW TO CREATE YOUR PULL REQUEST
 -->
 
-# TBD-course-name
+# Introduction to GitHub in Amadeus
 
-_TBD-course-description_
-
-<!--
-  <<< Author notes: Start of the course >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
-  Each step should be wrapped in <details>/<summary>, with an `id` set.
-  The start <details> should have `open` as well.
-  Do not use quotes on the <details> tag attributes.
--->
+_This course will show you briefly how to use GitHub in Amadeus, and the differences that can exist with current way of working with BitBucket_
 
 <details id=0>
 <summary><h2>Welcome</h2></summary>
 
-TBD-welcome-paragraph
-
-- **Who is this for**: TBD-audience.
-- **What you'll learn**: TBD-objective.
-- **What you'll build**: TBD-result.
-- **Prerequisites**: TBD-prerequisites.
-- **How long**: This course is TBD-step-count steps long and takes less than TBD-duration to complete.
+- **Who is this for**: Amadeus engineering community.
+- **What you'll learn**: Basic usage of GitHub, and how to efficiently contribute with it.
+- **What you'll build**: Issue, pull request, repository, action.
+- **Prerequisites**: Basig knowledge of git.
+- **How long**: This course is 5 steps long and takes less than 30min to complete.
 
 ## How to start this course
 
 1. Right-click **Start course** and open the link in a new tab.
    <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/TBD-generate)
 2. In the new tab, follow the prompts to create a new repository.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   - For owner, choose your personal account. :warning: Please do not use an organization to host the repository.
+   - This course will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    ![Create a new repository](https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png)
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
@@ -53,19 +38,22 @@ TBD-welcome-paragraph
 -->
 
 <details id=1 open>
-<summary><h2>Step 1: TBD-step-1-name</h2></summary>
+<summary><h2>Step 1: Issue and Pull Request</h2></summary>
 
-_Welcome to "TBD-course-name"! :wave:_
+_Welcome to "Introduction to GitHub in Amadeus"! :airplane:_
 
-TBD-step-1-information
+You will really quickly see some GitHub products in this step: assign yourself an issue, create a branch, edit it, create and PR and merge it
 
-**What is _TBD-term-1_**: TBD-definition-1
+Collaborative development model is by default the [shared repository model](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/about-collaborative-development-models). This setup can be changed at Organization level by the Organization owner.
 
-### :keyboard: Activity: TBD-step-1-name
+### :keyboard: Activity: Small development
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. TBD-step-1-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+2. We created an issue for you in the issue tab of your repository. You can switch to this tab using the [GitHub shorcuts](https://docs.github.com/en/get-started/using-github/keyboard-shortcuts)
+4. Under __Assignees__ on the right of the screen, click `assign yourself`. More settings can be added to an issue (labels, projects, etc)
+5. Under __Development__ on the right of the screen, click `Create a branch for this issue`. You could have created a PR prior this step, and then you can [link](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) them by referencing the issue number with a keyword (KEYWORD #ISSUE-NUMBER, e.g. `Fixes #1` in the PR description or commit.
+6. On the code tab, switch to your branch and edit the README.md fil
+7. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -77,94 +65,22 @@ TBD-step-1-information
 -->
 
 <details id=2>
-<summary><h2>Step 2: TBD-step-2-name</h2></summary>
+<summary><h2>Step 2: Links></summary>
 
-_You did TBD-step-1-name! :tada:_
+_You did Issue and Pull Request! :tada:_ You can know be considered as a GitHub expert :muscle::muscle:muscle:
+Please remember JIRA is still the standard solution for issue management in Amadeus even if nothing prevents you to use issues and/or project.
 
-TBD-step-2-information
-
-**What is _TBD-term-2_**: TBD-definition-2
+This second step is description of some actions that can help and encourage the collaboration within the Amadeus GitHub Entreprise Cloud.
 
 ### :keyboard: Activity: TBD-step-2-name
 
-1. TBD-step-2-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+1. Add a topic to your repository
+2. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
-<!--
-  <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-3-notes.
--->
 
 <details id=3>
-<summary><h2>Step 3: TBD-step-3-name</h2></summary>
-
-_Nice work finishing TBD-step-2-name :sparkles:_
-
-TBD-step-3-information
-
-**What is _TBD-term-3_**: TBD-definition-3
-
-### :keyboard: Activity: TBD-step-3-name
-
-1. TBD-step-3-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
-
-</details>
-
-<!--
-  <<< Author notes: Step 4 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-4-notes.
--->
-
-<details id=4>
-<summary><h2>Step 4: TBD-step-4-name</h2></summary>
-
-_Nicely done TBD-step-3-name! :partying_face:_
-
-TBD-step-4-information
-
-**What is _TBD-term-4_**: TBD-definition-4
-
-### :keyboard: Activity: TBD-step-4-name
-
-1. TBD-step-4-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
-
-</details>
-
-<!--
-  <<< Author notes: Step 5 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-5-notes.
--->
-
-<details id=5>
-<summary><h2>Step 5: TBD-step-5-name</h2></summary>
-
-_Almost there TBD-step-4-name! :heart:_
-
-TBD-step-5-information
-
-### :keyboard: Activity: TBD-step-5-name
-
-1. TBD-step-5-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
-
-</details>
-
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
-
-<details id=X>
 <summary><h2>Finish</h2></summary>
 
 _Congratulations friend, you've completed this course!_
@@ -173,25 +89,21 @@ _Congratulations friend, you've completed this course!_
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
-- TBD-recap.
+- Create a repository from template, assign to an issue, create a PR and approve.
+- Add a topic to your repository
 
 ### What's next?
 
-- TBD-continue.
 - [We'd love to hear what you thought of this course](TBD-feedback-link).
-- [Take another TBD-organization Course](https://github.com/TBD-organization).
+- Pulic courses similar to this one exist in the [GitHub Skills](https://github.com/skills) organization.
+- Internal courses can be found
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
 
 ---
 
-Get help: [TBD-support](TBD-support-link) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+Get help: [GitHub product Teams channel](https://teams.microsoft.com/l/channel/19%3a302f229eba7d491a80b72cc5842b7427%40thread.skype/Product%2520-%2520GitHub?groupId=d5c30991-1a75-4b2d-96f3-51f957674c3d&tenantId=b3f4f7c2-72ce-4192-aba4-d6c7719b5766) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
 &copy; 2022 TBD-copyright-holder &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [CC-BY-4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
