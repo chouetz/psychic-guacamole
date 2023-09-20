@@ -19,6 +19,15 @@ permissions:
   contents: write
 
 jobs:
+  macos_stat:
+    name: Test macos stat
+    runs-on: macos-11
+    steps:
+      - name: test stat
+        run: |
+          echo "bonjour les zamis" >> test.txt
+          stat --format %u test.txt
+
   get_current_step:
     name: Check current step number
     runs-on: ubuntu-latest
