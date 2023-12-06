@@ -2,8 +2,9 @@
 name: Just a manually triggered hello world
 on: [workflow_call]
 jobs:
-  execute:
+  coucou:
     runs-on: ubuntu-latest
     steps:
+      - uses: action/checkout@v4
       - name: Coucou le monde
         run: echo "Salut les copains"
