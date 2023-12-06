@@ -1,6 +1,6 @@
 ---
 name: Just a manually triggered hello world
-on: [workflow-dispatch]
+on: [workflow_call]
 jobs:
   execute:
     runs-on: ubuntu-latest
