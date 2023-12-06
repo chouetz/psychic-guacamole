@@ -22,5 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install ansible-core
           ansible-galaxy --h
-      - name: call friend
-        uses: ./.github/workflows/manual.yml
+  call_friend:
+    - name: call friend
+      uses: ./.github/workflows/manual.yml
