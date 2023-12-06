@@ -5,6 +5,5 @@ jobs:
   coucou:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v4
       - name: Coucou le monde
         run: echo "Salut les copains"
