@@ -23,4 +23,5 @@ jobs:
           pip install ansible-core
           ansible-galaxy --h
   call_friend:
+    needs: build
     uses: ./.github/workflows/manual.yml
