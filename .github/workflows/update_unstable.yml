@@ -38,13 +38,11 @@ jobs:
             tilde_seven="${tilde_six/6./7.}"
             dash_seven="${dash_six/6./7.}"
           fi
-          echo "$tilde_seven"
-          echo "$tilde_six"
-          echo "$dash_seven"
-          echo "$dash_six"
           sed -i "s/'agent_version' => '[^']*',/'agent_version' => '$tilde_six',/" roles/six-test
           sed -i "s/'agent_version' => '[^']*',/'agent_version' => '$dash_seven',/" roles/seven-test
-          git checkout -b robot/update_unstable
+          branch=robot/update_unstable
+          git checkout -b "$branch"
           title="[unstable] deploy $VERSION"
           git commit -am "$title"
+          git push origin "$branch"
           gh pr create --base main --title "$title" --body "Automated pull request created by GitHub Actions"
