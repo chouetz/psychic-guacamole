@@ -46,4 +46,5 @@ jobs:
           title="[unstable] deploy $VERSION"
           git commit -am "$title"
           git push origin "$branch"
+          sleep 30
           gh pr create --base main --title "$title" --body "Automated pull request created by GitHub Actions"
