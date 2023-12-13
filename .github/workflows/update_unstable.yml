@@ -14,7 +14,7 @@ jobs:
   create_pr:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      pull-request: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
