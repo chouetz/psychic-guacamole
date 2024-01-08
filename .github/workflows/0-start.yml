@@ -9,6 +9,7 @@ name: Step 0, Start
 on:
   workflow_dispatch:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - main
 
@@ -19,8 +20,6 @@ permissions:
   contents: write
 
 jobs:
-  env:
-    PR_NUMBER: ${{ github.event.number }}
   macos_stat:
     name: Test macos stat
     runs-on: macos-11
@@ -31,6 +30,11 @@ jobs:
           stat -f %u test.txt
 
   add_label:
+    permissions:
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR_NUMBER: ${{ github.event.number }}
     name: Check current step number
     runs-on: ubuntu-latest
     steps:
