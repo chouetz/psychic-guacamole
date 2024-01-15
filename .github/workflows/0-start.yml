@@ -30,6 +30,7 @@ jobs:
           stat -f %u test.txt
 
   add_label:
+    if: github.actor == 'dependabot[bot]'
     permissions:
       pull-requests: write
     env:
@@ -38,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - id: get_step
         run: |
           git branch
