@@ -34,7 +34,10 @@ jobs:
     steps:
       - name: listPRLabels
         run: |
-          echo "labels ${{ github.event.labels }}"
+          labels="${{join(github.event.pull_request.labels.*.name, ' ')}}"
+          for label in $(echo "$labels" | tr ' ' '\n'); do
+            echo "label is $label"
+          done
 
   add_label:
     if: github.actor == 'dependabot[bot]'
