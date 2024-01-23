@@ -29,6 +29,16 @@ jobs:
           echo "bonjour les zamis" >> test.txt
           stat -f %u test.txt
 
+  list_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: listPRLabels
+        run: |
+          labels="${{join(github.event.pull_request.labels.*.name, ' ')}}"
+          for label in $(echo "$labels" | tr ' ' '\n'); do
+            echo "label is $label"
+          done
+
   add_label:
     if: github.actor == 'dependabot[bot]'
     permissions:
