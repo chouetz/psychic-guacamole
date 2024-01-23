@@ -13,7 +13,6 @@ on:
     branches:
       - main
 
-# Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
@@ -35,7 +34,7 @@ jobs:
       - name: listPRLabels
         run: |
           labels="${{join(github.event.pull_request.labels.*.name, ' ')}}"
-          for label in $(echo "$labels" | tr ' ' '\n'); do
+          for label in $labels; do
             echo "label is $label"
           done
 
