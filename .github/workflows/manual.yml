@@ -1,6 +1,8 @@
 ---
 name: Just a manually triggered hello world
-on: [workflow_call]
+on:
+  workflow_call:
+  workflow_dispatch:
 jobs:
   coucou:
     runs-on: ubuntu-latest
