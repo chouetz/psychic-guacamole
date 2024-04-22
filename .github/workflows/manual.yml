@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Coucou le monde
-        run: echo "Salut les copains"
+        run: |
+          echo "Salut les copains"
+          which gpg
