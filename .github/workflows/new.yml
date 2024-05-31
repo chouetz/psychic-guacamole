@@ -1,0 +1,11 @@
+---
+name: Test I can run you
+on:
+  workflow_dispatch:
+jobs:
+  coucou:
+    runs-on: macos-11
+    steps:
+      - name: For fun
+        run: |
+          echo "Ca fait rire les oiseaux"
