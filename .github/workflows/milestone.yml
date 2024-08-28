@@ -4,7 +4,7 @@ name: Update milestone
 
 on:
   workflow_dispatch:
-  pull-requests:
+  pull_request:
     types:
       - open
       - closed
@@ -16,13 +16,16 @@ jobs:
   add-milestone:
     name: Add milestone on PR
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Set the merged PR milestone to current_milestone from release.json
-          run: |
-            echo "Setting milestone Amber to PR $NUMBER."
-            gh issue edit "$NUMBER" --milestone "Amber"
-          env:
-            NUMBER: ${{ github.event.number }}
-            MILESTONE: ${{ steps.current-milestone.outputs.MILESTONE }}
+        run: |
+          echo "Setting milestone Amber to PR $NUMBER."
+          gh issue edit "$NUMBER" --milestone "Amber"
+        env:
+          NUMBER: ${{ github.event.number }}
+          MILESTONE: ${{ steps.current-milestone.outputs.MILESTONE }}
