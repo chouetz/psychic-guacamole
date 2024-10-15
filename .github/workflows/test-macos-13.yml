@@ -1,0 +1,44 @@
+---
+name: Test macos-13
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  run-macos-12-current:
+    name: Test base64-12-current
+    runs-on: macos-12
+    steps:
+      - name: My step
+        run: |
+          export VERSION_CACHE_CONTENT="ewogICAgIjYiOiBbCiAgICAgICAgIjYuNjAuMCIsCiAgICAgICAgImRldmVsIiwKICAgICAgICAxNDAsCiAgICAgICAgIjJiOGFjZmQiLAogICAgICAgICI0NjUyMDU1MSIKICAgIF0sCiAgICAiNyI6IFsKICAgICAgICAiNy42MC4wIiwKICAgICAgICAiZGV2ZWwiLAogICAgICAgIDE0MCwKICAgICAgICAiMmI4YWNmZCIsCiAgICAgICAgIjQ2NTIwNTUxIgogICAgXSwKICAgICJuaWdodGx5IjogZmFsc2UsCiAgICAiZGV2IjogdHJ1ZQp9"
+          base64 -d <(echo "$VERSION_CACHE_CONTENT") > test.txt
+
+  run-macos-12-new:
+    name: Test base64-12-current
+    runs-on: macos-12
+    steps:
+      - name: My step-2
+        run: |
+          export VERSION_CACHE_CONTENT="ewogICAgIjYiOiBbCiAgICAgICAgIjYuNjAuMCIsCiAgICAgICAgImRldmVsIiwKICAgICAgICAxNDAsCiAgICAgICAgIjJiOGFjZmQiLAogICAgICAgICI0NjUyMDU1MSIKICAgIF0sCiAgICAiNyI6IFsKICAgICAgICAiNy42MC4wIiwKICAgICAgICAiZGV2ZWwiLAogICAgICAgIDE0MCwKICAgICAgICAiMmI4YWNmZCIsCiAgICAgICAgIjQ2NTIwNTUxIgogICAgXSwKICAgICJuaWdodGx5IjogZmFsc2UsCiAgICAiZGV2IjogdHJ1ZQp9"
+          echo "$VERSION_CACHE_CONTENT" | base64 -d > test.txt
+
+  run-macos-13-current:
+    name: Test base64
+    runs-on: macos-13
+    steps:
+      - name: My other step
+        run: |
+          export VERSION_CACHE_CONTENT="ewogICAgIjYiOiBbCiAgICAgICAgIjYuNjAuMCIsCiAgICAgICAgImRldmVsIiwKICAgICAgICAxNDAsCiAgICAgICAgIjJiOGFjZmQiLAogICAgICAgICI0NjUyMDU1MSIKICAgIF0sCiAgICAiNyI6IFsKICAgICAgICAiNy42MC4wIiwKICAgICAgICAiZGV2ZWwiLAogICAgICAgIDE0MCwKICAgICAgICAiMmI4YWNmZCIsCiAgICAgICAgIjQ2NTIwNTUxIgogICAgXSwKICAgICJuaWdodGx5IjogZmFsc2UsCiAgICAiZGV2IjogdHJ1ZQp9"
+          base64 -d <(echo "$VERSION_CACHE_CONTENT") > test.txt
+
+  run-macos-13-new:
+    name: Test base64-13-current
+    runs-on: macos-13
+    steps:
+      - name: My step-3
+        run: |
+          export VERSION_CACHE_CONTENT="ewogICAgIjYiOiBbCiAgICAgICAgIjYuNjAuMCIsCiAgICAgICAgImRldmVsIiwKICAgICAgICAxNDAsCiAgICAgICAgIjJiOGFjZmQiLAogICAgICAgICI0NjUyMDU1MSIKICAgIF0sCiAgICAiNyI6IFsKICAgICAgICAiNy42MC4wIiwKICAgICAgICAiZGV2ZWwiLAogICAgICAgIDE0MCwKICAgICAgICAiMmI4YWNmZCIsCiAgICAgICAgIjQ2NTIwNTUxIgogICAgXSwKICAgICJuaWdodGx5IjogZmFsc2UsCiAgICAiZGV2IjogdHJ1ZQp9"
+          echo "$VERSION_CACHE_CONTENT" | base64 -d > test.txt
