@@ -17,7 +17,7 @@ jobs:
           base64 -d <(echo "$VERSION_CACHE_CONTENT") > test.txt
 
   run-macos-12-new:
-    name: Test base64-12-current
+    name: Test base64-12-new
     runs-on: macos-12
     steps:
       - name: My step-2
@@ -26,7 +26,7 @@ jobs:
           echo "$VERSION_CACHE_CONTENT" | base64 -d > test.txt
 
   run-macos-13-current:
-    name: Test base64
+    name: Test base64-13-current
     runs-on: macos-13
     steps:
       - name: My other step
@@ -35,7 +35,7 @@ jobs:
           base64 -d <(echo "$VERSION_CACHE_CONTENT") > test.txt
 
   run-macos-13-new:
-    name: Test base64-13-current
+    name: Test base64-13-new
     runs-on: macos-13
     steps:
       - name: My step-3
