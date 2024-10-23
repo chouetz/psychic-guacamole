@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   coucou:
-    runs-on: macos-11
+    runs-on: macos-14
     steps:
       - name: Coucou le monde
         run: |
