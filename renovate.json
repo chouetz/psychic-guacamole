@@ -10,7 +10,7 @@
       "matchStrings": [
         "  DATADOG_AGENT_[^:]*: (?<currentValue>v.*)"
       ],
-      "depNameTemplage": "buildimages",
+      "depNameTemplate": "buildimages",
       "versioningTemplate": "loose",
       "datasourceTemplate": "custom.buildimages"
     }
