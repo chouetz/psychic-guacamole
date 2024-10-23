@@ -9,7 +9,7 @@ on:
 jobs:
   run-macos-12-current:
     name: Test base64-12-current
-    runs-on: macos-12
+    runs-on: macos-14
     steps:
       - name: My step
         run: |
@@ -18,7 +18,7 @@ jobs:
 
   run-macos-12-new:
     name: Test base64-12-new
-    runs-on: macos-12
+    runs-on: macos-14
     steps:
       - name: My step-2
         run: |
@@ -27,7 +27,7 @@ jobs:
 
   run-macos-13-current:
     name: Test base64-13-current
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: My other step
         run: |
@@ -36,7 +36,7 @@ jobs:
 
   run-macos-13-alt:
     name: Test base64-13-alt
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: My other step
         run: |
@@ -45,7 +45,7 @@ jobs:
 
   run-macos-13-new:
     name: Test base64-13-new
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: My step-3
         run: |
