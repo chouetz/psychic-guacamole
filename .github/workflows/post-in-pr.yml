@@ -8,6 +8,8 @@ on:
 jobs:
   comment-on-pr-review:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
 
     steps:
       - name: Add Comment to Pull Request
