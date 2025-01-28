@@ -21,7 +21,7 @@ permissions:
 jobs:
   macos_stat:
     name: Test macos stat
-    runs-on: macos-11
+    runs-on: macos-14
     steps:
       - name: test stat
         run: |
