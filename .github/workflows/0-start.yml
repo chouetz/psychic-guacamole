@@ -36,14 +36,17 @@ jobs:
                     repo: context.repo.repo,
                     pull_number: pullRequestNumber
                   });
-            return `${pullRequest.merge_state}`;
+            console.log(pullRequest);
+            console.log(pullRequest.mergeable_state);
+            console.log(pullRequest.mergeable);
+            return `${pullRequest.mergeable_state}`;
           result-encoding: string
       - name: When ok
         if: ${{ steps.check-mergeable.outputs.result == 'clean' }}
-        run: echo "OK ${{steps.check-mergeable.outputs.result}}"
+        run: echo "OK ${{steps.check-mergeable.outputs.result}} ${{github.event.pull_request.pull_request.html_url}}"
       - name: When ko
         if: ${{ steps.check-mergeable.outputs.result != 'clean' }}
-        run: echo "KO ${{steps.check-mergeable.outputs.result}}"
+        run: echo "KO ${{steps.check-mergeable.outputs.result}} ${{github.event.pull_request.pull_request.html_url}}"
 
   list_labels:
     runs-on: ubuntu-latest
