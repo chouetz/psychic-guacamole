@@ -19,14 +19,31 @@ permissions:
   contents: write
 
 jobs:
-  macos_stat:
+  check-merge-script:
     name: Test macos stat
-    runs-on: macos-14
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - name: test stat
-        run: |
-          echo "bonjour les zamis" >> test.txt
-          stat -f %u test.txt
+      - name: Check if the PR is mergeable
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        id: check-mergeable
+        with:
+          script: |
+            const pullRequestNumber = context.payload.pull_request.number;
+            const { data: pullRequest } = await github.rest.pulls.get({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pullRequestNumber
+                  });
+            return `${pullRequest.merge_state}`;
+          result-encoding: string
+      - name: When ok
+        if: ${{ steps.check-mergeable.outputs.result == 'clean' }}
+        run: echo "OK ${{steps.check-mergeable.outputs.result}}"
+      - name: When ko
+        if: ${{ steps.check-mergeable.outputs.result != 'clean' }}
+        run: echo "KO ${{steps.check-mergeable.outputs.result}}"
 
   list_labels:
     runs-on: ubuntu-latest
