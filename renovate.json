@@ -39,7 +39,17 @@
       "depNameTemplate": "gover",
       "versioningTemplate": "loose",
       "datasourceTemplate": "custom.gover"
-    }
+    },
+    {
+        "customType": "regex",
+        "fileMatch": ["release.json"],
+        "matchStrings": [
+          "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentValue>[a-z0-9]+)\""
+        ],
+        "depNameTemplate": "omnibus-ruby",
+        "versioningTemplate": "loose",
+        "datasourceTemplate": "custom.omnibus-ruby"
+     }
   ],
   "customDatasources": {
     "buildimages": {
