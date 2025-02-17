@@ -2,7 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabledManagers": ["custom.regex"],
   "labels": ["dependencies"],
-  "customManagers" : [
+  "hostRules": [
+    {
+      "hostType": "github",
+      "matchHost": "https://api.github.com",
+      "token": "process.env.GITHUB_TOKEN"
+    }
+  ],
+  "customManagers": [
     {
       "customType": "regex",
       "fileMatch": [".gitlab-ci.yml"],
