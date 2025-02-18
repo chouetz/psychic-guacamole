@@ -6,6 +6,10 @@
     {
       "hostType": "custom.protoc",
       "token": "process.env.GITHUB_TOKEN"
+    },
+    {
+      "hostType": "custom.omnibus-ruby",
+      "token": "process.env.GITHUB_TOKEN"
     }
   ],
   "customManagers": [
