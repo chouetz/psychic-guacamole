@@ -5,7 +5,7 @@
   "hostRules": [
     {
       "matchHost": "api.github.com",
-      "token": "process.env.GITHUB_TOKEN"
+      "token": "process.env.GITHUB_TOKEN",
       "concurrencyRequestLimit": 2
     }
   ],
