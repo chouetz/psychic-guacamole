@@ -72,9 +72,9 @@
       "format": "plain"
     },
     "omnibus-ruby": {
-      "defaultRegistryUrlTemplate": "https://api.github.com/repos/datadog/omnibus-ruby/commits",
+      "defaultRegistryUrlTemplate": "https://api.github.com/repos/datadog/omnibus-ruby/branches/datadog-5.5.0",
       "transformTemplates": [
-        "{\"releases\": $map($.[sha,commit.author.date], function($v) { {\"version\": $join([\"v\", $v[0]]), \"releaseTimestamp\": $v[1] } }) }"
+        "{\"releases\": {\"version\": $join([\"v\", $.commit.sha]), \"releaseTimestamp\": $.commit.commit.author.date } }"
       ]
     }
   }
