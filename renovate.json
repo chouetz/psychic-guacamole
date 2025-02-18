@@ -4,9 +4,8 @@
   "labels": ["dependencies"],
   "hostRules": [
     {
-      "matchHost": "api.github.com",
-      "token": "process.env.GITHUB_TOKEN",
-      "concurrentRequestLimit": 2
+      "hostType": "custom.protoc",
+      "token": "process.env.GITHUB_TOKEN"
     }
   ],
   "customManagers": [
