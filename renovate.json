@@ -4,8 +4,7 @@
   "labels": ["dependencies"],
   "hostRules": [
     {
-      "hostType": "github",
-      "matchHost": "https://api.github.com",
+      "matchHost": "api.github.com",
       "token": "process.env.GITHUB_TOKEN"
     }
   ],
