@@ -1,10 +1,10 @@
 {
     "nightly": {
-        "OMNIBUS_RUBY_VERSION": "88voanrt8u20349fjwptehg04f8hjh",
+        "OMNIBUS_RUBY_VERSION": "v0848904de8774b361ece8a685b2a5a7011d4f9c2",
         "OMNIBUS_SOFTWARE_VERSION": "88voanrt8u20349fjwptehg04f8hjh"
     },
     "daily": {
-        "OMNIBUS_RUBY_VERSION": "3x4923j4089jt0438xjht",
+        "OMNIBUS_RUBY_VERSION": "v0848904de8774b361ece8a685b2a5a7011d4f9c2",
         "OMNIBUS_SOFTWARE_VERSION": "88voanrt8u20349fjwptehg04f8hjh"
     }
 }
