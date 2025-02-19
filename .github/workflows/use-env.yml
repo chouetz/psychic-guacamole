@@ -4,6 +4,7 @@ name: Use environment
 on:
   push:
   workflow_dispatch:
+  issue_comment:
 
 
 jobs:
