@@ -74,7 +74,7 @@
     "omnibus-ruby": {
       "defaultRegistryUrlTemplate": "https://api.github.com/repos/datadog/omnibus-ruby/branches/datadog-5.5.0",
       "transformTemplates": [
-        "{\"releases\": {\"version\": $join([\"v\", $.commit.sha]), \"releaseTimestamp\": $.commit.commit.author.date } }"
+        "{\"releases\": [{\"version\": $join([\"v\", $.commit.sha]), \"releaseTimestamp\": $.commit.commit.author.date }] }"
       ]
     }
   }
