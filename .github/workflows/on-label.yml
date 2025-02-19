@@ -1,0 +1,29 @@
+---
+name: Trigger on label additon
+on:
+  pull-request:
+    types: [labeled, unlabeled]
+
+job:
+  label-vie:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Add label name to Pull Request
+        env:
+          LABEL_NAME: ${{ github.event.label.name }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pullRequestNumber = context.payload.pull_request.number;
+            const commentBody = process.env.LABEL_NAME;
+
+            // Add a comment to the pull request
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequestNumber,
+              body: commentBody
+            });
