@@ -6,12 +6,10 @@
   "hostRules": [
     {
       "hostType": "custom.protoc",
-      "readOnly": true,
       "token": "process.env.GITHUB_TOKEN"
     },
     {
       "hostType": "custom.omnibus-ruby",
-      "readOnly": true,
       "token": "process.env.GITHUB_TOKEN"
     }
   ],
