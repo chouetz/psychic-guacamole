@@ -1,0 +1,28 @@
+---
+name: Use environment
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  use-env:
+    name: With environment
+    runs-on: macos-14
+    environment:
+      prod
+    steps:
+      - name: My step
+        env:
+          TOTO: ${{ secrets.TEST }}
+        run: echo lenght of secret is ${#TOTO}
+
+  no-env:
+    name: Without env
+    runs-on: macos-14
+    steps:
+      - name: My step-2
+        env:
+          TOTO: ${{ secrets.TEST }}
+        run: echo lenght of secret is ${#TOTO}
