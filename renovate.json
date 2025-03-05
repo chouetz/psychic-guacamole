@@ -51,7 +51,7 @@
           "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentValue>[a-z0-9]+)\""
         ],
         "depNameTemplate": "omnibus-ruby",
-        "versioningTemplate": "regex:^(?<major>.*)$",
+        "versioningTemplate": "loose",
         "datasourceTemplate": "custom.omnibus-ruby"
      }
   ],
