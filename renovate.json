@@ -50,7 +50,9 @@
         "matchStrings": [
           "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentValue>[a-z0-9]+)\""
         ],
+        "currentValueTemplate": "datadog-5.5.0",
         "depNameTemplate": "omnibus-ruby",
+        "packageNameTemplate": "https://github.com/DataDog/omnibus-ruby",
         "datasourceTemplate": "git-refs"
      }
   ],
