@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabledManagers": ["custom.regex"],
   "labels": ["dependencies"],
-  "pruneStaleBranches": "false",
   "customManagers": [
     {
       "customType": "regex",
