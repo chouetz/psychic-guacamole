@@ -72,6 +72,6 @@
     "gover": {
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/DataDog/datadog-agent/refs/heads/main/.go-version",
       "format": "plain"
-    },
+    }
   }
 }
