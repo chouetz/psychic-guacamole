@@ -51,8 +51,7 @@
           "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentValue>[a-z0-9]+)\""
         ],
         "depNameTemplate": "omnibus-ruby",
-        "versioningTemplate": "loose",
-        "datasourceTemplate": "custom.omnibus-ruby"
+        "datasourceTemplate": "git-refs"
      }
   ],
   "customDatasources": {
@@ -72,11 +71,5 @@
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/DataDog/datadog-agent/refs/heads/main/.go-version",
       "format": "plain"
     },
-    "omnibus-ruby": {
-      "defaultRegistryUrlTemplate": "https://api.github.com/repos/datadog/omnibus-ruby/branches/datadog-5.5.0",
-      "transformTemplates": [
-        "{\"releases\": [{\"version\": $.commit.sha, \"releaseTimestamp\": $.commit.commit.author.date }] }"
-      ]
-    }
   }
 }
