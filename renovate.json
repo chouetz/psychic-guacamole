@@ -20,7 +20,7 @@
         "(?<currentValue>[0-9]+.[0-9]+(-rc[0-9]+)?)"
       ],
       "depNameTemplate": "protocolbuffers/protobuf",
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
