@@ -41,4 +41,6 @@ jobs:
       - run: unzip pr.zip
 
       - name: Add label
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr edit $(cat ./NR) --add-label "enhancement"
