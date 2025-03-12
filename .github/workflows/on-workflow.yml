@@ -18,6 +18,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
+        id: app-token
+        with:
+          app-id: ${{ vars.TEST_APP_ID }}
+          private-key: ${{ secrets.TEST_APP_PRIVATE_KEY }}
       - name: 'Download artifact'
         uses: actions/github-script@v7
         with:
@@ -43,7 +48,7 @@ jobs:
       - name: 'Add label to PR'
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./NR'));
