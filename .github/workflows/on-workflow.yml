@@ -40,16 +40,16 @@ jobs:
             fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
       - run: unzip pr.zip
 
-      - name: 'Comment on PR'
+      - name: 'Add label to PR'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./NR'));
-            await github.rest.issues.createComment({
+            await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: 'Everything is OK. Thank you for the PR!'
+              labels: ['enhancement']
             });
