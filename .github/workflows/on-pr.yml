@@ -51,8 +51,8 @@ jobs:
             echo "label is $label"
           done
 
-  add_label:
-    if: github.actor == 'dependabot[bot]'
+  add_reviewer:
+    if: github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]'
     permissions:
       pull-requests: write
     env:
@@ -66,7 +66,7 @@ jobs:
         run: |
           git branch
           echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
-      - name: Add label
-        run: gh pr edit ${{ github.event.number }} --add-label "bug"
+      - name: Add reviewer
+        run: gh pr edit ${{ github.event.number }} --add-reviewer "chouetz"
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
