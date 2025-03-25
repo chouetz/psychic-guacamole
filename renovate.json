@@ -3,6 +3,7 @@
   "enabledManagers": ["custom.regex", "pre-commit"],
   "labels": ["dependencies"],
   "pre-commit": {
+    "enabled": true,
     "fileMatch": [".pre-commit-config.yaml"]
   },
   "customManagers": [
