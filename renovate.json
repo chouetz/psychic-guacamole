@@ -2,6 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabledManagers": ["custom.regex", "pre-commit"],
   "labels": ["dependencies"],
+  "pre-commit": {
+    "fileMatch": [".pre-commit-config.yaml"]
+  },
   "customManagers": [
     {
       "customType": "regex",
