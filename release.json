@@ -2,11 +2,11 @@
     "nightly": {
         "OMNIBUS_RUBY_VERSION": "88voanrt8u20349fjwptehg04f8hjh",
         "OMNIBUS_SOFTWARE_VERSION": "88voanrt8u20349fjwptehg04f8hjh",
-        "INTEGRATIONS_CORE_VERSION": "gaq423rwefadfewa"
+        "INTEGRATIONS_CORE_VERSION": "6d6070d47e498268c15f66483d551744528dd4ed"
     },
     "daily": {
         "OMNIBUS_RUBY_VERSION": "3x4923j4089jt0438xjht",
         "OMNIBUS_SOFTWARE_VERSION": "88voanrt8u20349fjwptehg04f8hjh",
-        "INTEGRATIONS_CORE_VERSION": "gaq423rwefadfewa"
+        "INTEGRATIONS_CORE_VERSION": "6d6070d47e498268c15f66483d551744528dd4ed"
     }
 }
