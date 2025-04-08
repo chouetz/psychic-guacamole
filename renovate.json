@@ -74,7 +74,6 @@
         "matchStrings": [
           "[ ]+'agent_version' => '(?<currentDigest>[0-9]+.[0-9]+.[0-9]+(~rc.[0-9]+)?)'"
         ],
-        "currentValueTemplate": "master",
         "depNameTemplate": "agent",
         "packageNameTemplate": "https://github.com/DataDog/datadog-agent",
         "datasourceTemplate": "git-tags"
