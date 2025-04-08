@@ -44,7 +44,17 @@
       "depNameTemplate": "gover",
       "versioningTemplate": "loose",
       "datasourceTemplate": "custom.gover"
-    },
+    },      
+     {
+        "customType": "regex",
+        "fileMatch": ["unstable.rb"],
+        "matchStrings": [
+          "[ ]+'agent_version' => '(?<currentValue>[0-9]+.[0-9]+.[0-9]+(~rc.[0-9]+)?)'"
+        ],
+        "depNameTemplate": "agent",
+        "packageNameTemplate": "https://github.com/DataDog/datadog-agent",
+        "datasourceTemplate": "git-tags"
+      },
     {
         "customType": "regex",
         "fileMatch": ["release.json"],
@@ -67,16 +77,6 @@
         "depNameTemplate": "integrations-core",
         "packageNameTemplate": "https://github.com/DataDog/integrations-core",
         "datasourceTemplate": "git-refs"
-      },      
-     {
-        "customType": "regex",
-        "fileMatch": ["unstable.rb"],
-        "matchStrings": [
-          "[ ]+'agent_version' => '(?<currentDigest>[0-9]+.[0-9]+.[0-9]+(~rc.[0-9]+)?)'"
-        ],
-        "depNameTemplate": "agent",
-        "packageNameTemplate": "https://github.com/DataDog/datadog-agent",
-        "datasourceTemplate": "git-tags"
       }
   ],
   "customDatasources": {
