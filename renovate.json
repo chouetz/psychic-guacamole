@@ -53,7 +53,8 @@
         ],
         "depNameTemplate": "agent",
         "packageNameTemplate": "https://github.com/DataDog/datadog-agent",
-        "datasourceTemplate": "git-tags"
+        "datasourceTemplate": "git-tags",
+        "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(-rc.\\d+)?$"
       },
     {
         "customType": "regex",
