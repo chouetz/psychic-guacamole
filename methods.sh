@@ -1,3 +1,4 @@
+# Comment or not comment
 function for_sed() {
   for file in `git grep $1 | cut -d":" -f1 | sort -u`; do
     sed -i "" "s/$1/$2/g" $file;

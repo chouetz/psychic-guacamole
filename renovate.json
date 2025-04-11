@@ -1,7 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "enabledManagers": ["custom.regex"],
+  "enabledManagers": ["custom.regex", "pre-commit"],
   "labels": ["dependencies"],
+  "platformCommit": "enabled",
+  "pre-commit": {
+    "enabled": true,
+    "fileMatch": [".pre-commit-config.yaml"]
+  },
+  "packageRules": [
+    {
+      "matchDepNames": ["integrations-core"],
+      "schedule": [
+        "* 1-5 * * 2,6"
+      ]
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -31,7 +44,18 @@
       "depNameTemplate": "gover",
       "versioningTemplate": "loose",
       "datasourceTemplate": "custom.gover"
-    },
+    },      
+     {
+        "customType": "regex",
+        "fileMatch": ["unstable.rb"],
+        "matchStrings": [
+          "[ ]+'agent_version' => '(?<currentValue>[0-9]+.[0-9]+.[0-9]+(~rc.[0-9]+)?)'"
+        ],
+        "depNameTemplate": "agent",
+        "packageNameTemplate": "https://github.com/DataDog/datadog-agent",
+        "datasourceTemplate": "git-tags",
+        "versioningTemplate": "semver"
+      },
     {
         "customType": "regex",
         "fileMatch": ["release.json"],
@@ -43,7 +67,18 @@
         "packageNameTemplate": "https://github.com/DataDog/omnibus-software",
         "versioningTemplate": "git",
         "datasourceTemplate": "git-refs"
-     }
+     },      
+     {
+        "customType": "regex",
+        "fileMatch": ["release.json"],
+        "matchStrings": [
+          "[ ]+\"INTEGRATIONS_CORE_VERSION\": \"(?<currentDigest>[a-z0-9]+)\""
+        ],
+        "currentValueTemplate": "master",
+        "depNameTemplate": "integrations-core",
+        "packageNameTemplate": "https://github.com/DataDog/integrations-core",
+        "datasourceTemplate": "git-refs"
+      }
   ],
   "customDatasources": {
     "buildimages": {
