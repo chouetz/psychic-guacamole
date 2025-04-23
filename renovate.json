@@ -10,9 +10,11 @@
   "packageRules": [
     {
       "matchDepNames": ["integrations-core"],
-      "schedule": [
-        "* 1-5 * * 2,6"
-      ]
+      "schedule": ["* 1-5 * * 2,6"]
+    },
+    {
+      "matchedDepNames": ["buildimages"],
+      "changeLogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}"
     }
   ],
   "customManagers": [
@@ -76,6 +78,7 @@
         ],
         "currentValueTemplate": "master",
         "depNameTemplate": "integrations-core",
+        "versioningTemplate": "loose",
         "packageNameTemplate": "https://github.com/DataDog/integrations-core",
         "datasourceTemplate": "git-refs"
       }
