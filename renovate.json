@@ -10,7 +10,7 @@
   "packageRules": [
     {
       "matchDepNames": ["integrations-core"],
-      "changelogUrl": "https://github.com/DataDog/integrations-core/compare/{{currentDigest}}..{{newDigest}}"
+      "changelogUrl": "https://github.com/DataDog/integrations-core/compare/{{currentDigest}}..{{newDigest}}",
       "schedule": ["* 1-5 * * 2,6"]
     },
     {
