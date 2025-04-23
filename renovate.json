@@ -14,7 +14,7 @@
     },
     {
       "matchedDepNames": ["buildimages"],
-      "changeLogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}"
+      "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}"
     }
   ],
   "customManagers": [
