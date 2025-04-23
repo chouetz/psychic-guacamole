@@ -10,11 +10,12 @@
   "packageRules": [
     {
       "matchDepNames": ["integrations-core"],
+      "changelogUrl": "https://github.com/DataDog/integrations-core/compare/{{currentDigest}}..{{newDigest}}"
       "schedule": ["* 1-5 * * 2,6"]
     },
     {
       "matchDepNames": ["buildimages"],
-      "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}"
+      "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/commits/main"
     }
   ],
   "customManagers": [
@@ -78,7 +79,7 @@
         ],
         "currentValueTemplate": "master",
         "depNameTemplate": "integrations-core",
-        "versioningTemplate": "loose",
+        "versioningTemplate": "git",
         "packageNameTemplate": "https://github.com/DataDog/integrations-core",
         "datasourceTemplate": "git-refs"
       }
