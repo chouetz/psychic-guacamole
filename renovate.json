@@ -3,6 +3,7 @@
   "enabledManagers": ["custom.regex", "pre-commit"],
   "labels": ["dependencies"],
   "platformCommit": "enabled",
+  "stopUpdatingLabel": "stop-updating",
   "pre-commit": {
     "enabled": true,
     "fileMatch": [".pre-commit-config.yaml"]
