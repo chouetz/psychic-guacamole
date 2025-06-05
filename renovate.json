@@ -48,7 +48,7 @@
       "depNameTemplate": "gover",
       "versioningTemplate": "loose",
       "datasourceTemplate": "custom.gover"
-    },      
+    },
      {
         "customType": "regex",
         "fileMatch": ["unstable.rb"],
@@ -62,6 +62,17 @@
       },
     {
         "customType": "regex",
+        "fileMatch": [".dda/version"],
+        "matchStrings": [
+          "(?<currentValue>[0-9]+.[0-9]+.[0-9]+)"
+        ],
+        "depNameTemplate": "dda",
+        "packageNameTemplate": "https://github.com/DataDog/datadog-agent-dev",
+        "versioningTemplate": "git",
+        "datasourceTemplate": "github-releases"
+     },
+    {
+        "customType": "regex",
         "fileMatch": ["release.json"],
         "matchStrings": [
           "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentDigest>[a-z0-9]+)\""
@@ -71,7 +82,7 @@
         "packageNameTemplate": "https://github.com/DataDog/omnibus-software",
         "versioningTemplate": "git",
         "datasourceTemplate": "git-refs"
-     },      
+     },
      {
         "customType": "regex",
         "fileMatch": ["release.json"],
