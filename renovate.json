@@ -17,6 +17,10 @@
     {
       "matchDepNames": ["buildimages"],
       "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/commits/main"
+    },
+    {
+      "matchDepNames": ["DataDog/datadog-agent-dev"],
+      "changelogUrl": "https://github.com/DataDog/datadog-agent-dev/releases/tag/v{{newValue}}"
     }
   ],
   "customManagers": [
