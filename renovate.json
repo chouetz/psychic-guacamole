@@ -41,7 +41,7 @@
         "  CI_IMAGE_WIN_[^:]*: (?<currentValue>v.*)"
       ],
       "depNameTemplate": "windows",
-      "versioningTemplate": "docker",
+      "versioningTemplate": "loose",
       "datasourceTemplate": "custom.windows"
     },
     {
@@ -118,7 +118,7 @@
     "windows": {
       "defaultRegistryUrlTemplate": "https://hub.docker.com/v2/namespaces/datadog/repositories/agent-buildimages-windows_x64/tags",
       "transformTemplates": [
-        "{\"releases\": $map(results, function($v) { {\"version\": $replace($v.name, \"lstc2022-\", \"\"), \"releaseTimestamp\": $v.last_updated } }) }"
+        "{\"releases\": $map(results, function($v) { {\"version\": $replace($replace($v.name, \"lstc2022-\", \"\"), \"lstc2022\", \"v9999\"), \"releaseTimestamp\": $v.last_updated } }) }"
       ]
     },
     "gover": {
