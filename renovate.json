@@ -43,7 +43,7 @@
       "depNameTemplate": "windows",
       "versioningTemplate": "docker",
       "registryUrls": ["https://hub.docker.com"],
-      "extractVersionTemplate": "ltsc2022-v(?<version>.*)"
+      "extractVersionTemplate": "ltsc2022-v(?<version>.*)",
       "datasourceTemplate": "docker"
     },
     {
