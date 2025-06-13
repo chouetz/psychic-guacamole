@@ -41,10 +41,8 @@
         "  CI_IMAGE_WIN_[^:]*: (?<currentValue>v.*)"
       ],
       "depNameTemplate": "windows",
-      "versioningTemplate": "docker",
-      "registryUrls": ["https://hub.docker.com"],
-      "extractVersionTemplate": "ltsc2022-v(?<version>.*)",
-      "datasourceTemplate": "docker"
+      "versioningTemplate": "regex:^ltsc2022-v(?<major>\\d+)-.*$",
+      "datasourceTemplate": "custom.windows"
     },
     {
       "customType": "regex",
