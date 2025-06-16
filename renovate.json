@@ -41,7 +41,7 @@
         "  CI_IMAGE_WIN_[^:]*: (?<currentValue>v.*)"
       ],
       "depNameTemplate": "windows",
-      "versioningTemplate": "regex:^ltsc2022-v(?<major>\\d+)-.*$",
+      "versioningTemplate": "regex:^(ltsc2022-)?v(?<major>\\d+)-.*$",
       "datasourceTemplate": "custom.windows"
     },
     {
