@@ -42,7 +42,8 @@
       ],
       "depNameTemplate": "windows",
       "versioningTemplate": "regex:^(ltsc2022-)?v(?<major>\\d+)-.*$",
-      "datasourceTemplate": "custom.windows"
+      "datasourceTemplate": "custom.windows",
+      "extractVersionTemplate": "^(ltsc2022-)?(?<version>.*)$"
     },
     {
       "customType": "regex",
