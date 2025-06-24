@@ -16,7 +16,7 @@
     },
     {
       "matchDepNames": ["linux-images", "windows-images"],
-      "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/commits/main"
+      "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}",
     },
     {
       "matchDepNames": ["DataDog/datadog-agent-dev"],
@@ -31,7 +31,7 @@
         "  CI_IMAGE_[^W][^:]*: (?<currentValue>v.*)"
       ],
       "depNameTemplate": "linux-images",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "regex:^v(?<major>\\d+)-(?<digest>.*)$",
       "datasourceTemplate": "custom.linux-images"
     },
     {
@@ -41,7 +41,7 @@
         "  CI_IMAGE_WIN_[^:]*: (?<currentValue>v.*)"
       ],
       "depNameTemplate": "windows-images",
-      "versioningTemplate": "regex:^(ltsc2022-)?v(?<major>\\d+)-.*$",
+      "versioningTemplate": "regex:^(ltsc2022-)?v(?<major>\\d+)-(?<digest>.*)$",
       "datasourceTemplate": "custom.windows-images",
       "extractVersionTemplate": "^(ltsc2022-)?(?<version>.*)$"
     },
