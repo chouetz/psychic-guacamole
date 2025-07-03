@@ -58,6 +58,15 @@
       "customType": "regex",
       "fileMatch": ["dda.env"],
       "matchStrings": [
+        "^.*HelmVersion.*= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
+      ],
+      "depNameTemplate": "datadog/helm-charts",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["dda.env"],
+      "matchStrings": [
         "DDA_VERSION=v(?<currentValue>[0-9]+.[0-9]+.[0-9]+)"
       ],
       "depNameTemplate": "datadog/datadog-agent-dev",
