@@ -19,6 +19,10 @@
       "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}",
     },
     {
+      "matchDepNames": ["datadog/helm-charts"],
+      "changelogUrl": "https://github.com/DataDog/helm-charts/releases/tag/v{{newValue}}",
+    },
+    {
       "matchDepNames": ["DataDog/datadog-agent-dev"],
       "changelogUrl": "https://github.com/DataDog/datadog-agent-dev/releases/tag/v{{newValue}}"
     }
@@ -61,7 +65,8 @@
         "^.*HelmVersion.*= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
       ],
       "depNameTemplate": "datadog/helm-charts",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^(datadog-)?(?<version>.*)$"
     },
     {
       "customType": "regex",
