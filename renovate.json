@@ -66,6 +66,7 @@
       ],
       "depNameTemplate": "datadog/helm-charts",
       "versioningTemplate": "regex:^(datadog-)?(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
+      "extractVersionTemplate": "^(datadog-)?(?<version>.*)$",
       "datasourceTemplate": "github-releases"
     },
     {
