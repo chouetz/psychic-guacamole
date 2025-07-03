@@ -65,7 +65,7 @@
         "^.*HelmVersion.*= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
       ],
       "depNameTemplate": "datadog/helm-charts",
-      "versioningTemplate": "regex:^(datadog-)?v(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
+      "versioningTemplate": "regex:^(datadog-)?(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
       "datasourceTemplate": "github-releases"
     },
     {
