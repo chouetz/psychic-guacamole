@@ -62,12 +62,12 @@
       "customType": "regex",
       "fileMatch": ["dda.env"],
       "matchStrings": [
-        "^.*HelmVersion.*= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
+        "^\tHelmVersion[ ]+= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
       ],
       "depNameTemplate": "datadog/helm-charts",
       "versioningTemplate": "regex:^(datadog-)?(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
       "extractVersionTemplate": "^(datadog-)?(?<version>.*)$",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "custom.helm-charts"
     },
     {
       "customType": "regex",
@@ -144,6 +144,12 @@
       "defaultRegistryUrlTemplate": "https://hub.docker.com/v2/namespaces/datadog/repositories/agent-buildimages-windows_x64/tags",
       "transformTemplates": [
         "{\"releases\": $map(results, function($v) { {\"version\": $v.name, \"releaseTimestamp\": $v.last_updated, \"digest\": $v.digest } }) }"
+      ]
+    },
+    "helm-charts": {
+      "defaultRegistryUrlTemplate": "https://api.github.com/repos/DataDog/helm-charts/releases",
+      "transformTemplates": [
+        "{\"releases\": $map($, function($v) { {\"version\": $v.tag_name, \"releaseTimestamp\": $v.created_at, \"digest\": $v.target_commitish } }) }"
       ]
     },
     "gover": {
