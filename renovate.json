@@ -51,7 +51,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [".protoc-version"],
+      "managerFilePatterns": [".protoc-version"],
       "matchStrings": [
         "(?<currentValue>[0-9]+.[0-9]+(-rc[0-9]+)?)"
       ],
