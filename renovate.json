@@ -6,7 +6,7 @@
   "stopUpdatingLabel": "stop-updating",
   "pre-commit": {
     "enabled": true,
-    "fileMatch": [".pre-commit-config.yaml"]
+    "managerFilePatterns": [".pre-commit-config.yaml"]
   },
   "packageRules": [
     {
@@ -30,7 +30,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [".gitlab-ci.yml"],
+      "managerFilePatterns": [".gitlab-ci.yml"],
       "matchStrings": [
         "  CI_IMAGE_[^W][^:]*: (?<currentValue>v.*)"
       ],
@@ -40,7 +40,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [".gitlab-ci.yml"],
+      "managerFilePatterns": [".gitlab-ci.yml"],
       "matchStrings": [
         "  CI_IMAGE_WIN_[^:]*: (?<currentValue>v.*)"
       ],
@@ -60,7 +60,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["dda.env"],
+      "managerFilePatterns": ["dda.env"],
       "matchStrings": [
         "^\tHelmVersion[ ]+= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
       ],
@@ -71,7 +71,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["dda.env"],
+      "managerFilePatterns": ["dda.env"],
       "matchStrings": [
         "DDA_VERSION=v(?<currentValue>[0-9]+.[0-9]+.[0-9]+)"
       ],
@@ -80,7 +80,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["Dockerfile"],
+      "managerFilePatterns": ["Dockerfile"],
       "matchStrings": [
         "ENV GO_VERSION=(?<currentValue>.*)"
       ],
@@ -90,7 +90,7 @@
     },
      {
         "customType": "regex",
-        "fileMatch": ["unstable.rb"],
+        "managerFilePatterns": ["unstable.rb"],
         "matchStrings": [
           "[ ]+'agent_version' => '(?<currentValue>[0-9]+.[0-9]+.[0-9]+(~rc.[0-9]+)?)'"
         ],
@@ -101,7 +101,7 @@
       },
     {
         "customType": "regex",
-        "fileMatch": [".dda/version"],
+        "managerFilePatterns": [".dda/version"],
         "matchStrings": [
           "(?<currentValue>[0-9]+.[0-9]+.[0-9]+)"
         ],
@@ -110,7 +110,7 @@
      },
     {
         "customType": "regex",
-        "fileMatch": ["release.json"],
+        "managerFilePatterns": ["release.json"],
         "matchStrings": [
           "[ ]+\"OMNIBUS_RUBY_VERSION\": \"(?<currentDigest>[a-z0-9]+)\""
         ],
@@ -122,7 +122,7 @@
      },
      {
         "customType": "regex",
-        "fileMatch": ["release.json"],
+        "managerFilePatterns": ["release.json"],
         "matchStrings": [
           "[ ]+\"INTEGRATIONS_CORE_VERSION\": \"(?<currentDigest>[a-z0-9]+)\""
         ],
