@@ -1,0 +1,29 @@
+---
+name: Add a label from PR comment
+
+on:
+  issue_comment:
+jobs:
+  label-vie:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Add label name to Pull Request
+        env:
+          LABEL_NAME: ${{ github.event.comment.body }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pullRequestNumber = context.payload.pull_request.number;
+            const label = [process.env.LABEL_NAME];
+
+            // Add a comment to the pull request
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequestNumber,
+              labels[].name: label
+            });
+
