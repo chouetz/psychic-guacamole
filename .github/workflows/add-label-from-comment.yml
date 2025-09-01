@@ -24,6 +24,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pullRequestNumber,
-              labels[].name: label
+              labels: label
             });
 
