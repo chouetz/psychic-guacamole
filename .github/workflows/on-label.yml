@@ -16,7 +16,7 @@ jobs:
       - name: Add label name to Pull Request
         env:
           LABEL_NAME: ${{ github.event.label.name }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const pullRequestNumber = context.payload.pull_request.number;
