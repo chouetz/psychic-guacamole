@@ -19,8 +19,11 @@
       "changelogUrl": "https://github.com/DataDog/datadog-agent-buildimages/compare/{{currentDigest}}..{{newDigest}}",
     },
     {
-      "matchDepNames": ["datadog/helm-charts"],
-      "changelogUrl": "https://github.com/DataDog/helm-charts/releases/tag/v{{newValue}}",
+      "matchDatasources": ["github-releases"],                                                                                                                                   │ │
+      "matchDepNames": ["datadog/helm-charts"],                                                                                                                                  │ │
+      "matchFileNames": ["dda.env"],
+      "extractVersion": "^datadog-(?<version>.*)$"   
+      "changelogUrl": "https://github.com/DataDog/helm-charts/releases/tag/datadog-{{newValue}}",
     },
     {
       "matchDepNames": ["DataDog/datadog-agent-dev"],
@@ -62,12 +65,12 @@
       "customType": "regex",
       "managerFilePatterns": ["dda.env"],
       "matchStrings": [
-        "^\tHelmVersion[ ]+= \"(?<currentValue>[0-9]+.[0-9]+.[0-9]+)\""
+        "^\tHelmVersion[ ]+= \"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "datadog/helm-charts",
-      "versioningTemplate": "regex:^[a-z-]+-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)$",
-      "extractVersionTemplate": "^[a-z-]+-(?<version>.*)$",
-      "datasourceTemplate": "custom.helm-charts"
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^datadog-(?<version>.*)$",
+      "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
