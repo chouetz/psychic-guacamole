@@ -95,7 +95,7 @@
                 "dda.env"
             ],
             "matchStrings": [
-                "HelmVersion[ ]+= \"(?<currentValue>.*)\""
+                "[^H]+HelmVersion[ ]+= \"(?<currentValue>.*)\""
             ],
             "depNameTemplate": "datadog/helm-charts",
             "versioningTemplate": "semver",
