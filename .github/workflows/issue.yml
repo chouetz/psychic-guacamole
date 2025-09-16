@@ -1,0 +1,15 @@
+---
+name: Issue label
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  set_pending_label:
+    runs-on: ubuntu-latest
+    permissions:
+        issues: write
+    steps:
+      - name: Set pending label
+        run: gh issue edit ${{ github.event.issue.number }} --add-label "pending"
+
