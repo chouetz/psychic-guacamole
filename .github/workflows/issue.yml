@@ -9,19 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
         issues: write
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Set pending label
         uses: actions/github-script@v6
-        run:  |
-          const issueNumber = context.payload.issue.number;
-          const label = "pending";
-          await github.rest.issues.addLabels({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: issueNumber,
-            labels: [label]
-          });
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issueNumber = context.payload.issue.number;
+            const label = "pending";
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              labels: [label]
+            });
 
 
