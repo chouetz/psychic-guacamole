@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
         issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Set pending label
         run: gh issue edit ${{ github.event.issue.number }} --add-label "pending"
