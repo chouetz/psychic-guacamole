@@ -13,7 +13,7 @@ jobs:
       - name: Add label name to Pull Request
         env:
           LABEL_NAME: ${{ github.event.comment.body }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const pullRequestNumber = context.payload.issue.number;
