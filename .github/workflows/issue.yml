@@ -13,5 +13,15 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Set pending label
-        run: gh issue edit ${{ github.event.issue.number }} --add-label "pending"
+        uses: actions/github-script@v6
+        run:  |
+          const issueNumber = context.payload.issue.number;
+          const label = "pending";
+          await github.rest.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: issueNumber,
+            labels: [label]
+          });
+
 
