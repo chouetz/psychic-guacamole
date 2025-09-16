@@ -2,8 +2,7 @@
 name: Closed Pull Request
 
 on:
-  pull_request_target:
-    types: [closed]
+  push:
     branches:
       - main
 
@@ -20,10 +19,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: PR number
+        id: pr_number
+        run: |
+          # Get the last commit message from the push to main
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
+          echo "Last commit message: $COMMIT_MESSAGE"
+
+          # Extract PR number from format "(#1234)" in commit message
+          PR_NUMBER=$(echo "$COMMIT_MESSAGE" | grep -oE '\(#[0-9]+\)' | grep -oE '[0-9]+')
+
+          # If no PR number found in commit message, exit with error
+          if [ -z "$PR_NUMBER" ]; then
+            echo "Error: No PR number found in commit message format (#{number})"
+            echo "Commit message was: $COMMIT_MESSAGE"
+            exit 1
+          else
+            echo "Extracted PR number from commit message: $PR_NUMBER"
+          fi
+
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
       - name: Check Secret Length
         env:
           SECRET_VALUE: ${{ secrets.MY_SECRET }}
         run: |
+          echo "pr  ${{ steps.pr_number.outputs.pr_number }}"
           if [ -z "$SECRET_VALUE" ]; then
             echo "❌ Secret is not set or is empty"
             exit 1
@@ -39,13 +60,3 @@ jobs:
             echo "✅ Secret length is valid (not 0)"
           fi
 
-      - name: PR Status
-        run: |
-          if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
-            echo "🎉 PR was merged"
-          else
-            echo "❌ PR was closed without merging"
-          fi
-          
-          echo "PR #${{ github.event.number }}: ${{ github.event.pull_request.title }}"
-          echo "Author: ${{ github.event.pull_request.user.login }}"
