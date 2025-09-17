@@ -15,13 +15,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const issueNumber = context.payload.issue.number;
-            const label = "pending";
-            await github.rest.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber,
-              labels: [label]
-            });
+            const script = require('.github/script/issue.cjs');
+            (async fonction () {
+              await script({github, context});
+            })();
 
 
