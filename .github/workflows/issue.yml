@@ -16,7 +16,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const script = require('.github/script/issue.cjs');
-            (async fonction () {
+            (async function () {
               await script({github, context});
             })();
 
