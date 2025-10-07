@@ -11,3 +11,6 @@ jobs:
         run: |
           echo "Salut les copains"
           which gpg
+          echo "Bonjour la compagnie" >> test.txt
+      - name: Apres la pluie
+        run: cat test.txt
