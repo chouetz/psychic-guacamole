@@ -18,7 +18,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up git
         run: |
           git config --global user.email "actions@github.com"
